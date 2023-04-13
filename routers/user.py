@@ -5,7 +5,7 @@ import cruds.todo
 from routers.db import get_db
 import schemas.todo
 
-router = APIRouter(prefix="/todos")
+router = APIRouter(prefix="/users")
 
 
 @router.get("/", response_model=list[schemas.todo.Todo])

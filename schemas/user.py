@@ -1,12 +1,12 @@
 from pydantic import BaseModel
 
 
-class TodoCreate(BaseModel):
-    user_id: int
+class UserCreate(BaseModel):
+    pass
 
     class Config:
         orm_mode = True
 
 
-class Todo(TodoCreate):
+class User(UserCreate):
     id: int
