@@ -1,5 +1,5 @@
 #!/bin/sh
-BACKEND_PORT=`eval $PORT + 10000`
+BACKEND_PORT=`expr $PORT + 10000`
 
 echo "frontend port: ${PORT}"
 echo "backend port: ${BACKEND_PORT}"
