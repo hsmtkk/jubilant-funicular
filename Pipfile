@@ -9,6 +9,8 @@ uvicorn = "*"
 sqlalchemy = "*"
 python-dotenv = "*"
 alembic = "*"
+psycopg2-binary = "*"
+streamlit = "*"
 
 [dev-packages]
 
