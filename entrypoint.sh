@@ -1,4 +1,7 @@
 #!/bin/sh
+echo "env command"
+env
+
 STREAMLIT_PORT=$PORT
 
 echo "frontend port: ${STREAMLIT_PORT}"
