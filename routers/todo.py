@@ -9,5 +9,12 @@ router = APIRouter(prefix="/todos")
 
 
 @router.get("/", response_model=list[schemas.todo.Todo])
-def list(db: Session = Depends(get_db)):
-    pass
+def list(db: Session = Depends(get_db)) -> list[schemas.todo.Todo]:
+    return cruds.todo.list(db)
+
+
+@router.post("/", response_model=schemas.todo.Todo)
+def create(
+    todo: schemas.todo.TodoCreate, db: Session = Depends(get_db)
+) -> schemas.todo.Todo:
+    return cruds.todo.create(db, todo)
