@@ -1,11 +1,8 @@
 #!/bin/sh
-echo "env command"
-env
+BACKEND_PORT=`eval $PORT + 10000`
 
-STREAMLIT_PORT=$PORT
+echo "frontend port: ${PORT}"
+echo "backend port: ${BACKEND_PORT}"
 
-echo "frontend port: ${STREAMLIT_PORT}"
-echo "backend port: ${FASTAPI_PORT}"
-
-uvicorn backend:app --host 0.0.0.0 --port $FASTAPI_PORT &
-streamlit run frontend.py --server.address 0.0.0.0 --server.port $STREAMLIT_PORT
+uvicorn backend:app --host 0.0.0.0 --port $BACKEND_PORT &
+streamlit run frontend.py --server.address 0.0.0.0 --server.port $PORT
